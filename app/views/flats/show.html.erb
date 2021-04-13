@@ -1,0 +1,28 @@
+<div class="banner" style="background-image: url('<%= @flat.picture_url %>')"></div>
+
+<div class="container">
+  <div>
+    <h2><%= @flat.name %></h2>
+    <p><%= @flat.address %></p>
+  </div>
+  <div>
+    <h3>A bit more about this flat</h3>
+    <p><%= @flat.description %></p>
+  </div>
+  <div>
+    <h3>Details</h3>
+    <div>
+      <i class="fas fa-hand-holding-usd"><%= @flat.price_per_night %></i>
+      <i class="fas fa-user-friends"><%= @flat.number_of_guests %></i>
+    </div>
+  </div>
+  <div>
+    <h3>Actions</h3>
+    <%= link_to 'Edit', edit_flat_path(@flat), class: 'btn-form' %>
+    <%= link_to 'Remove', flat_path(@flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-form' %>
+  </div>
+</div>
+
+<div>
+  <%= link_to 'Back', flats_path, class: 'btn-form' %>
+</div>
